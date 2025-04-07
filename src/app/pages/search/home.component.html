@@ -1,0 +1,79 @@
+<ion-header class="header">
+  <ion-toolbar color="danger">
+    <ion-title>
+      Planifier
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-img src="assets/images/cff.svg" class="logo" style="width: 100px; height: 50px;"></ion-img>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="danger">
+    <ion-segment value="horaire" mode="md">
+      <ion-segment-button value="horaire">
+        <ion-label>Horaire</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="tactile">
+        <ion-label>Horaire tactile</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="carte">
+        <ion-label>Carte</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="h-full">
+    <form [formGroup]="form" class="ion-padding ion-margin-top form-search">
+      <ion-row class="h-full">
+        <ion-col class="h-full border-bottom">
+          <ion-label>De</ion-label>
+          <ion-input type="text" formControlName="from" placeholder="Départ"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label>À</ion-label>
+          <ion-input type="text" formControlName="to" placeholder="Arrivée"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4" class="ion-text-center">
+          <ion-date displayFormat="DD/MM/YYYY" formControlName="date" placeholder="Date"></ion-date>
+        </ion-col>
+        <ion-col size="4" class="ion-text-center">
+          <ion-date displayFormat="HH:mm" formControlName="time" placeholder="Heure"></ion-date>
+        </ion-col>
+         <ion-col class="ion-text-center">
+          <ion-button (click)="search()" class="btn-search">Rechercher</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+
+    <!-- Affichage du JSON -->
+    <ion-row *ngIf="apiResult">
+      <ion-col>
+          <pre style="background: #f5f5f5; padding: 10px; overflow: auto;">{{ apiResult | json }}</pre>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tab-bar>
+      <ion-tab-button tab="home">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Accueil</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="search">
+        <ion-icon name="search-outline"></ion-icon>
+        <ion-label>Recherche</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="profile">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-label>Profil</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-toolbar>
+</ion-footer>

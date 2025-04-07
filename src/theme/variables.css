@@ -1,0 +1,20 @@
+/**
+ * Ionic Dark Theme
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+:root {
+    --ion-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --ion-font-family-light: 'Helvetica Neue Light', Helvetica, Arial, sans-serif;
+    --ion-font-family-medium: 'Helvetica Neue Medium', Helvetica, Arial, sans-serif;
+    --ion-font-family-bold: 'Helvetica Neue Bold', Helvetica, Arial, sans-serif;
+  }
+
+
+    
