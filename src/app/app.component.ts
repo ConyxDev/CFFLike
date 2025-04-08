@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonApp, IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonInput, IonText, IonRouterOutlet } from '@ionic/angular/standalone';
 import { RouterModule } from '@angular/router';
 
+
+
 export const UI_ELEMENTS = [
   IonApp,
   IonContent,
