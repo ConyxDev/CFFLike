@@ -105,7 +105,7 @@ export class HomeComponent implements OnInit {
   connections: Connection[] = [];
 
   constructor(
-    private _router: Router,
+    private router: Router,
     private apiService: ApiService
   ) {
     addIcons({ calendarOutline, timeOutline });

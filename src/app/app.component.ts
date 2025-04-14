@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonApp, IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonInput, IonText, IonRouterOutlet } from '@ionic/angular/standalone';
 import { RouterModule } from '@angular/router';
-
+import '@khmyznikov/pwa-install';
 
 
 export const UI_ELEMENTS = [
@@ -21,7 +21,8 @@ export const UI_ELEMENTS = [
   selector: 'app-root',
   imports: [...UI_ELEMENTS, RouterModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppComponent {
   title = 'myApp';
